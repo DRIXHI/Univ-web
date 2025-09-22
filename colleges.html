@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colleges - STARFORD INTERNATIONAL UNIVERSITY</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header>
+    <div class="header-container">
+        <div class="header-logo-container">
+            <a href="index.html">
+            <img src="starford logo.jpg" alt="Starford International University Logo" class="header-logo" />
+            </a>
+            <a href="index.html">
+            <h1 class="header-title">STARFORD INTERNATIONAL UNIVERSITY</h1>
+            </a>
+        </div>
+        
+        <button id="mobile-menu-button" type="button" title="Open mobile menu">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        <nav class="nav-menu">
+            <ul class="nav-list">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="colleges.html" class="nav-link active">Colleges</a></li>
+                <li><a href="admission_form_page.html" class="nav-link">Admission</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="backend/login.php" class="nav-link">Admin Login</a></li>
+            </ul>
+        </nav>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu">
+        <ul class="mobile-nav-list">
+            <li class="mobile-nav-item"><a href="index.html" class="mobile-nav-link">Home</a></li>
+            <li class="mobile-nav-item"><a href="about.html" class="mobile-nav-link">About</a></li>
+            <li class="mobile-nav-item"><a href="colleges.html" class="mobile-nav-link active">Colleges</a></li>
+            <li class="mobile-nav-item"><a href="admission_form_page.html" class="mobile-nav-link">Admission</a></li>
+            <li class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+            <li class="mobile-nav-item"><a href="backend/login.php" class="mobile-nav-link">Admin Login</a></li>
+        </ul>
+    </div>
+</header>
+
+    <!-- Courses Section -->
+    <section id="courses" class="courses-section">
+  <h2 class="section-title">our colleges</h2>
+  <!-- Colleges contents -->
+  <div class="college-filters">
+      <button onclick="filterCourses('all')" class="college-btn college-btn-all">All Colleges</button>
+      <button onclick="filterCourses('management')" class="college-btn college-btn-other">Management Science</button>
+      <button onclick="filterCourses('csit')" class="college-btn college-btn-other">Computer Science & IT</button>
+      <button onclick="filterCourses('law')" class="college-btn college-btn-other">Law</button>
+      <button onclick="filterCourses('economics')" class="college-btn college-btn-other">Economics & Social Studies</button>
+  </div>
+  
+  <!-- Course cards container -->
+  <div class="courses-grid">
+      <!-- MANAGEMENT SCIENCE DEGREE PROGRAMS -->
+      <div class="course-card" data-college="management" data-program="degree">
+          <img src="bussiness studies.jpg" alt="Business Administration" class="course-image">
+          <div class="course-content">
+              <h3 class="course-title">BBA - Business Administration</h3>
+              <p class="course-description">Master leadership, strategic thinking, and global business practices.</p>
+              <div class="course-meta">
+                  <span class="course-duration">4 Years</span>
+                  <span class="course-type">Bachelor's Degree</span>
+              </div>
+          </div>
+      </div>
+<!-- ... (all the other course cards from the original code) ... -->
+       <div class="course-card" data-college="management" data-program="diploma">
+          <img src="accounting.jpg" alt="Diploma in Accounting" class="course-image">
+          <div class="course-content">
+              <h3 class="course-title">Diploma in Accounting & Bookkeeping</h3>
+              <p class="course-description">Master essential accounting practices and use modern financial tools.</p>
+              <div class="course-meta">
+                  <span class="course-duration">3 Years</span>
+                  <span class="course-type">Diploma</span>
+              </div>
+          </div>
+      </div>
+
+      <div class="course-card" data-college="management" data-program="diploma">
+          <img src="supply chain.jpg" alt="Diploma in Supply Chain" class="course-image">
+          <div class="course-content">
+              <h3 class="course-title">Diploma in Supply Chain Management</h3>
+              <p class="course-description">Understand inventory systems, warehouse management, and sourcing.</p>
+              <div class="course-meta">
+                  <span class="course-duration">3 Years</span>
+                  <span class="course-type">Diploma</span>
+              </div>
+          </div>
+      </div>
+
+      <div class="course-card" data-college="management" data-program="diploma">
+          <img src="crm.jpg" alt="Customer Relationship Management" class="course-image">
+          <div class="course-content">
+              <h3 class="course-title">Diploma in Customer Relationship Management</h3>
+              <p class="course-description">Build customer care skills, CRM software proficiency, and sales support experience.</p>
+              <div class="course-meta">
+                  <span class="course-duration">2 Years</span>
+                  <span class="course-type">Diploma</span>
+              </div>
+          </div>
+      </div>
+
+      <!-- COMPUTER SCIENCE & INFORMATION TECHNOLOGY DEGREE PROGRAMS -->
+      <div class="course-card" data-college="csit" data-program="degree">
+          <img src="cs.jpg" alt="Computer Science" class="course-image">
+          <div class="course-content">
+              <h3 class="course-title">BSc. Computer Science</h3>
+              <p class="course-description">Gain expertise in software engineering, systems design, and computational theory.</p>
+              <div class="course-meta">
+                  <span class="course-duration">4 Years</span>
+                  <span class="course-type">Bachelor's Degree</span>
+              </div>
+          </div>
+      </div>
+
+      <div class="course-card" data-college="csit" data-program="degree">
+          <img src="aidc.jpg" alt="Data Science & AI" class="course-image">
+          <div class="course-content">
+              <h3 class="course-title">BSc. Data Science & Artificial Intelligence</h3>
+              <p class="course-description">Learn machine learning, big data processing, and ethical AI development.</p>
+              <div class="course-meta">
+                  <span class="course-duration">4 Years (coming soon)</span>
+                  <span class="course-type">Bachelor's Degree</span>
+              </div>
+          </div>
+      </div>
+
+      <div class="course-card" data-college="csit" data-program="degree">
+          <img src="cybers.jpg" alt="Cybersecurity" class="course-image">
+          <div class="course-content">
+              <h3 class="course-title">BSc. Cybersecurity</h3>
+              <p class="course-description">Focus on ethical hacking, cyber defense, risk analysis, and secure systems.</p>
+              <div class="course-meta">
+                  <span class="course-duration">4 Years (coming soon)</span>
+                  <span class="course-type">Bachelor's Degree</span>
+              </div>
+          </div>
+      </div>
+
+      <div class="course-card" data-college="csit" data-program="degree">
+          <img src="software eng.jpg" alt="Software Engineering" class="course-image">
+          <div class="course-content">
+              <h3 class="course-title">BSc. Software Engineering</h3>
+              <p class="course-description">Design, build, and maintain software solutions using agile and DevOps practices.</p>
+              <div class="course-meta">
+                  <span class="course-duration">4 Years (coming soon)</span>
+                  <span class="course-type">Bachelor's Degree</span>
+              </div>
+          </div>
+      </div>
+
+      <div class="course-card" data-college="csit" data-program="degree">
+          <img src="i.t.jpg" alt="Information Technology" class="course-image">
+          <div class="course-content">
+              <h3 class="course-title">BSc. Information Technology</h3>
+              <p class="course-description">Learn to manage IT infrastructure, networks, databases, and support enterprise systems securely and efficiently.</p>
+              <div class="course-meta">
+                  <span class="course-duration">4 Years</span>
+                  <span class="course-type">Bachelor's Degree</span>
+              </div>
+          </div>
+      </div>
+
+      <!-- COMPUTER SCIENCE & I.T. DIPLOMA PROGRAMS -->
+      <div class="course-card" data-college="csit" data-program="diploma">
+          <img src="dit.jpg" alt="Diploma in IT" class="course-image">
+          <div class="course-content">
+              <h3 class="course-title">Diploma in Information Technology</h3>
+              <p class="course-description">Build skills in networking, operating systems, and IT support roles.</p>
+              <div class="course-meta">
+                  <span class="course-duration">3 Years</span>
+                  <span class="course-type">Diploma</span>
+              </div>
+          </div>
+      </div>
+
+      <div class="course-card" data-college="csit" data-program="diploma">
+          <img src="webd.jpg" alt="Diploma in Web Development" class="course-image">
+          <div class="course-content">
+              <h3 class="course-title">Diploma in Web Development</h3>
+              <p class="course-description">Master frontend and backend development using HTML, CSS, JavaScript, and frameworks.</p>
+              <div class="course-meta">
+                  <span class="course-duration">3 Years (coming soon)</span>
+                  <span class="course-type">Diploma</span>
+              </div>
+          </div>
+      </div>
+
+      <div class="course-card" data-college="csit" data-program="diploma">
+          <img src="cnetwork.jpg" alt="Computer Networks" class="course-image">
+          <div class="course-content">
+              <h3 class="course-title">Diploma in Computer Networks</h3>
+              <p class="course-description">Understand LAN/WAN setup, routers, firewalls, and basic networking protocols.</p>
+              <div class="course-meta">
+                  <span class="course-duration">3 Years (coming soon)</span>
+                  <span class="course-type">Diploma</span>
+              </div>
+          </div>
+      </div>
+
+      <div class="course-card" data-college="csit" data-program="diploma">
+          <img src="cybers.jpg" alt="Cybersecurity Fundamentals" class="course-image">
+          <div class="course-content">
+              <h3 class="course-title">Diploma in Cybersecurity Fundamentals</h3>
+              <p class="course-description">Learn the basics of cyber threats, incident response, and digital protection.</p>
+              <div class="course-meta">
+                  <span class="course-duration">3 Years (coming soon)</span>
+                  <span class="course-type">Diploma</span>
+              </div>
+          </div>
+      </div>
+
+      <!-- COLLEGE OF LAW – DEGREE PROGRAMS -->
+      <div class="course-card" data-college="law" data-program="degree">
+          <img src="law llb.jpg" alt="Law LLB" class="course-image">
+          <div class="course-content">
+              <h3 class="course-title">LLB - Bachelor of Laws</h3>
+              <p class="course-description">Study civil, criminal, and constitutional law to prepare for legal practice or judiciary roles.</p>
+              <div class="course-meta">
+                  <span class="course-duration">4 Years</span>
+                  <span class="course-type">Bachelor's Degree</span>
+              </div>
+          </div>
+      </div>
+
+      <div class="course-card" data-college="law" data-program="degree">
+          <img src="humanr.jpg" alt="Human Rights Law" class="course-image">
+          <div class="course-content">
+              <h3 class="course-title">BA. Human Rights Law</h3>
+              <p class="course-description">Focus on legal protections for individuals and marginalized groups globally.</p>
+              <div class="course-meta">
+                  <span class="course-duration">4 Years (coming soon)</span>
+                  <span class="course-type">Bachelor's Degree</span>
+              </div>
+          </div>
+      </div>
+
+      <div class="course-card" data-college="law" data-program="degree">
+          <img src="internal law.jpg" alt="International Law" class="course-image">
+          <div class="course-content">
+              <h3 class="course-title">LLB - International Law</h3>
+              <p class="course-description">Explore treaties, international courts, and legal frameworks across borders.</p>
+              <div class="course-meta">
+                  <span class="course-duration">4 Years (coming soon)</span>
+                  <span class="course-type">Bachelor's Degree</span>
+              </div>
+          </div>
+      </div>
+
+      <div class="course-card" data-college="law" data-program="degree">
+          <img src="commercial law.jpg" alt="Commercial Law" class="course-image">
+          <div class="course-content">
+              <h3 class="course-title">LLB - Commercial Law</h3>
+              <p class="course-description">Study business contracts, trade regulations, and commercial dispute resolution.</p>
+              <div class="course-meta">
+                  <span class="course-duration">4 Years (coming soon)</span>
+                  <span class="course-type">Bachelor's Degree</span>
+              </div>
+          </div>
+      </div>
+
+      <!-- COLLEGE OF LAW – DIPLOMA PROGRAMS -->
+      <div class="course-card" data-college="law" data-program="diploma">
+          <img src="legals.jpg" alt="Diploma in Law" class="course-image">
+          <div class="course-content">
+              <h3 class="course-title">Diploma in Legal Studies</h3>
+              <p class="course-description">Get foundational knowledge of legal systems, contracts, and criminal law.</p>
+              <div class="course-meta">
+                  <span class="course-duration">3 Years (coming soon)</span>
+                  <span class="course-type">Diploma</span>
+              </div>
+          </div>
+      </div>
+
+      <div class="course-card" data-college="law" data-program="diploma">
+          <img src="criminal justice.jpg" alt="Diploma in Criminal Justice" class="course-image">
+          <div class="course-content">
+              <h3 class="course-title">Diploma in Criminal Justice</h3>
+              <p class="course-description">Learn criminal law principles, evidence handling, and correctional procedures.</p>
+              <div class="course-meta">
+                  <span class="course-duration">3 Years (coming soon)</span>
+                  <span class="course-type">Diploma</span>
+              </div>
+          </div>
+      </div>
+
+      <div class="course-card" data-college="law" data-program="diploma">
+          <img src="paralegal.jpg" alt="Diploma in Paralegal Studies" class="course-image">
+          <div class="course-content">
+              <h3 class="course-title">Diploma in Paralegal Studies</h3>
+              <p class="course-description">Train in legal writing, research, and administrative procedures for legal support roles.</p>
+              <div class="course-meta">
+                  <span class="course-duration">3 Years (coming soon)</span>
+                  <span class="course-type">Diploma</span>
+              </div>
+          </div>
+      </div>
+
+      <!-- ECONOMICS & SOCIAL SCIENCES – DEGREE PROGRAMS -->
+      <div class="course-card" data-college="economics" data-program="degree">
+          <img src="banking sytem.jpg" alt="Economics" class="course-image">
+          <div class="course-content">
+              <h3 class="course-title">BA. Economics</h3>
+              <p class="course-description">Study macroeconomics, microeconomics, and policy-making for real-world applications.</p>
+              <div class="course-meta">
+                  <span class="course-duration">4 Years</span>
+                  <span class="course-type">Bachelor's Degree</span>
+              </div>
+          </div>
+      </div>
+
+      <div class="course-card" data-college="economics" data-program="degree">
+          <img src="international img.jpg" alt="International Relations" class="course-image">
+          <div class="course-content">
+              <h3 class="course-title">BA. International Relations & Deplomacies</h3>
+              <p class="course-description">Explore diplomacy, conflict resolution, and global governance in international affairs.</p>
+              <div class="course-meta">
+                  <span class="course-duration">4 Years</span>
+                  <span class="course-type">Bachelor's Degree</span>
+              </div>
+          </div>
+      </div>
+
+      <div class="course-card" data-college="economics" data-program="degree">
+          <img src="devels.jpg" alt="Development Studies" class="course-image">
+          <div class="course-content">
+              <h3 class="course-title">BA. Development Studies</h3>
+              <p class="course-description">Understand sustainable development, global inequality, and international aid systems.</p>
+              <div class="course-meta">
+                  <span class="course-duration">4 Years</span>
+                  <span class="course-type">Bachelor's Degree</span>
+              </div>
+          </div>
+      </div>
+
+      <div class="course-card" data-college="economics" data-program="degree">
+          <img src="publica.jpg" alt="Public Administration" class="course-image">
+          <div class="course-content">
+              <h3 class="course-title">BA. Public Administration</h3>
+              <p class="course-description">Prepare for civil service careers with courses in governance, policy, and management.</p>
+              <div class="course-meta">
+                  <span class="course-duration">4 Years</span>
+                  <span class="course-type">Bachelor's Degree</span>
+              </div>
+          </div>
+      </div>
+
+      <!-- ECONOMICS & SOCIAL SCIENCES – DIPLOMA PROGRAMS -->
+      <div class="course-card" data-college="economics" data-program="diploma">
+          <img src="deconomic.jpg" alt="Diploma in Economics" class="course-image">
+          <div class="course-content">
+              <h3 class="course-title">Diploma in Economics</h3>
+              <p class="course-description">Cover the fundamentals of economic theory, markets, and public finance.</p>
+              <div class="course-meta">
+                  <span class="course-duration">3 Years</span>
+                  <span class="course-type">Diploma</span>
+              </div>
+          </div>
+      </div>
+
+      <div class="course-card" data-college="economics" data-program="diploma">
+          <img src="diplomacyd.jpg" alt="Diploma in Diplomacy" class="course-image">
+          <div class="course-content">
+              <h3 class="course-title">Diploma in Diplomacy & International Affairs</h3>
+              <p class="course-description">Gain skills in protocol, negotiation, and international communication.</p>
+              <div class="course-meta">
+                  <span class="course-duration">3 Years</span>
+                  <span class="course-type">Diploma</span>
+              </div>
+          </div>
+      </div>
+
+      <div class="course-card" data-college="economics" data-program="diploma">
+          <img src="social policy.jpg" alt="Diploma in Social Policy" class="course-image">
+          <div class="course-content">
+              <h3 class="course-title">Diploma in Social Policy</h3>
+              <p class="course-description">Understand welfare systems, community development, and social justice frameworks.</p>
+              <div class="course-meta">
+                  <span class="course-duration">3 Years</span>
+                  <span class="course-type">Diploma</span>
+              </div>
+          </div>
+      </div>
+  </div>
+  
+  <div id="course-message">
+      <p class="course-message-text">Courses have been hidden due to inactivity.</p>
+      <button onclick="showLastCourses()" class="show-courses-btn">
+          Show Courses Again
+      </button>
+  </div>
+</section>
+
+    <!-- Footer -->
+    <footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-about">
+                <h4>Starford International University</h4>
+                <p>Shaping future leaders through excellence in education, research, and innovation.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="colleges.html">Colleges</a></li>
+                    <li><a href="admission_form_page.html">Admission</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Starford International University. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+    <!-- Back to Top Button -->
+    <button id="back-to-top" title="Back to Top">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
+    <script src="script.js"></script>
+</body>
+</html>

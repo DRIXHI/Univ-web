@@ -1,0 +1,561 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission Form - Starford International University</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #f3f4f6;
+            color: #374151;
+            line-height: 1.5;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        /* Header styles */
+        .header {
+            background-color: #1e3a8a;
+            color: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo {
+            height: 40px;
+            width: 40px;
+            margin-right: 0.5rem;
+            border-radius: 50%;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+        }
+        
+        .university-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+        
+        /* Section styles */
+        .section {
+            padding: 4rem 0;
+            background-color: #f3f4f6;
+        }
+        
+        .section-title {
+            font-size: 1.875rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #1e3a8a;
+        }
+        
+        .grid {
+            display: grid;
+            gap: 3rem;
+        }
+        
+        @media (min-width: 768px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        /* Process steps */
+        .process-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #1e3a8a;
+        }
+        
+        .step-container {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+        
+        .step-number {
+            background-color: #dc2626;
+            color: white;
+            border-radius: 50%;
+            width: 2rem;
+            height: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-right: 1rem;
+        }
+        
+        .step-content h4 {
+            font-weight: 600;
+            font-size: 1.125rem;
+            margin-bottom: 0.25rem;
+            color: #1e3a8a;
+        }
+        
+        .step-content p {
+            color: #374151;
+        }
+        
+        /* Form styles */
+        .form-container {
+            background-color: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            padding: 1.5rem;
+        }
+        
+        .form-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #1e3a8a;
+            text-align: center;
+        }
+        
+        .form-description {
+            color: #374151;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-section-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1e3a8a;
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 0.5rem;
+        }
+        
+        .form-grid {
+            display: grid;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        @media (min-width: 768px) {
+            .form-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .form-grid-full {
+                grid-column: span 2;
+            }
+        }
+        
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        
+        .form-label {
+            display: block;
+            color: #374151;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+        .form-input, .form-select, .form-textarea {
+            width: 100%;
+            padding: 0.5rem 1rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+        }
+        
+        .form-input:focus, .form-select:focus, .form-textarea:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+        }
+        
+        .form-file {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
+        }
+        
+        .declaration {
+            background-color: #dbeafe;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .declaration-checkbox {
+            margin-top: 0.25rem;
+            margin-right: 0.5rem;
+        }
+        
+        .submit-button {
+            background-color: #1e3a8a;
+            color: white;
+            font-weight: bold;
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .submit-button:hover {
+            background-color: #1e40af;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .success-message {
+            padding: 1.5rem;
+            background-color: #dcfce7;
+            color: #166534;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="header">
+        <div class="header-container container">
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="starford logo.jpg" alt="Starford International University Logo" class="logo" />
+                </a>
+                <a href="index.html">
+                    <h1 class="university-name">STARFORD INTERNATIONAL UNIVERSITY</h1>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Admission Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Admission Process</h2>
+            
+            <div class="grid">
+                <div>
+                    <h3 class="process-title">How to Apply</h3>
+                    
+                    <div>
+                        <div class="step-container">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Applications Fee</h4>
+                                <p>Make payment to cooperative bank of south sudan at any branch</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step-container">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Submit Documents</h4>
+                                <p>Submit your academic transcripts, recommendation letters, and any required test scores.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step-container">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Application Review</h4>
+                                <p>Our admissions committee will review your application within 2-3 weeks.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step-container">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>Admission Decision</h4>
+                                <p>You'll receive an email notification with your admission status.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-container">
+                    <h3 class="form-title">Request Information</h3>
+                    <p class="form-description">
+                        Fill out the form below to receive more information about our programs.
+                    </p>
+                    
+                    <form id="admissionForm" method="POST" action="backend/process_admission.php" enctype="multipart/form-data">
+                        <!-- Personal Information -->
+                        <h3 class="form-section-title">Personal Information</h3>
+                        
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="full_name" class="form-label">Full Name *</label>
+                                <input type="text" id="full_name" name="full_name" required class="form-input">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="date_of_birth" class="form-label">Date of Birth *</label>
+                                <input type="date" id="date_of_birth" name="date_of_birth" required class="form-input">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="gender" class="form-label">Gender *</label>
+                                <select id="gender" name="gender" required class="form-select">
+                                    <option value="">Select Gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="nationality" class="form-label">Nationality *</label>
+                                <input type="text" id="nationality" name="nationality" required class="form-input">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="id_number" class="form-label">National ID/Passport Number *</label>
+                                <input type="text" id="id_number" name="id_number" required class="form-input">
+                            </div>
+                        </div>
+                        
+                        <!-- Contact Information -->
+                        <h3 class="form-section-title">Contact Information</h3>
+                        
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email Address *</label>
+                                <input type="email" id="email" name="email" required class="form-input">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone" class="form-label">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required class="form-input">
+                            </div>
+                            
+                            <div class="form-group form-grid-full">
+                                <label for="address" class="form-label">Address *</label>
+                                <textarea id="address" name="address" rows="3" required class="form-textarea"></textarea>
+                            </div>
+                        </div>
+                        
+                        <!-- Academic Information -->
+                        <h3 class="form-section-title">Academic Information</h3>
+                        
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="program" class="form-label">Program of Interest *</label>
+                                <select id="program" name="program" required class="form-select">
+                                    <option value="">Select Program</option>
+                                    <!-- Management Science -->
+                                    <option value="BBA - Business Administration">BBA - Business Administration</option>
+                                    <option value="BSc. Accounting & Finance">BSc. Accounting & Finance</option>
+                                    <option value="BSc. Human Resource Management">BSc. Human Resource Management</option>
+                                    <option value="BSc. Marketing & Digital Strategy">BSc. Marketing & Digital Strategy</option>
+                                    <option value="BSc. Procurement & Logistics">BSc. Procurement & Logistics</option>
+                                    <!-- Computer Science & IT -->
+                                    <option value="BSc. Computer Science">BSc. Computer Science</option>
+                                    <option value="BSc. Cybersecurity">BSc. Cybersecurity</option>
+                                    <option value="BSc. Data Science & Artificial Intelligence">BSc. Data Science & Artificial Intelligence</option>
+                                    <option value="BSc. Software Engineering">BSc. Software Engineering</option>
+                                    <option value="BSc. Information Technology">BSc. Information Technology</option>
+                                    <!-- Law -->
+                                    <option value="LLB - Bachelor of Laws">LLB - Bachelor of Laws</option>
+                                    <option value="BA. Human Rights Law">BA. Human Rights Law</option>
+                                    <option value="LLB - International Law">LLB - International Law</option>
+                                    <option value="LLB - Commercial Law">LLB - Commercial Law</option>
+                                    <!-- Economics & Social Sciences -->
+                                    <option value="BA. Economics">BA. Economics</option>
+                                    <option value="BA. International Relations & Diplomacies">BA. International Relations & Diplomacies</option>
+                                    <option value="BA. Development Studies">BA. Development Studies</option>
+                                    <option value="BA. Public Administration">BA. Public Administration</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="previous_education" class="form-label">Previous Education *</label>
+                                <input type="text" id="previous_education" name="previous_education" required class="form-input" 
+                                    placeholder="e.g., High School Diploma, Bachelor's Degree">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="graduation_year" class="form-label">Year of Graduation *</label>
+                                <input type="number" id="graduation_year" name="graduation_year" min="1950" max="2025" required class="form-input">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="gpa" class="form-label">GPA/Score *</label>
+                                <input type="number" id="gpa" name="gpa" step="0.01" min="0" max="4.0" required class="form-input">
+                            </div>
+                        </div>
+                        
+                        <!-- Sponsorship Information -->
+                        <h3 class="form-section-title">Sponsorship Information</h3>
+                        
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="sponsorship_type" class="form-label">Type of Sponsorship *</label>
+                                <select id="sponsorship_type" name="sponsorship_type" required class="form-select">
+                                    <option value="">Select Sponsorship Type</option>
+                                    <option value="Self-sponsored">Self-sponsored</option>
+                                    <option value="Parent/Guardian">Parent/Guardian</option>
+                                    <option value="Scholarship">Scholarship</option>
+                                    <option value="Employer-sponsored">Employer-sponsored</option>
+                                    <option value="Government-sponsored">Government-sponsored</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div id="sponsor_name_container" class="form-group hidden">
+                                <label for="sponsor_name" class="form-label">Sponsor Name</label>
+                                <input type="text" id="sponsor_name" name="sponsor_name" class="form-input">
+                            </div>
+                            
+                            <div id="scholarship_details_container" class="form-group form-grid-full hidden">
+                                <label for="scholarship_details" class="form-label">Scholarship Details</label>
+                                <textarea id="scholarship_details" name="scholarship_details" rows="2" class="form-textarea"></textarea>
+                            </div>
+                        </div>
+                        
+                        <!-- Documents Upload -->
+                        <h3 class="form-section-title">Required Documents</h3>
+                        
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="id_document" class="form-label">ID/Passport Copy *</label>
+                                <input type="file" id="id_document" name="id_document" accept=".pdf,.jpg,.jpeg,.png" required class="form-file">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="academic_documents" class="form-label">Academic Certificates/Transcripts *</label>
+                                <input type="file" id="academic_documents" name="academic_documents" accept=".pdf,.jpg,.jpeg,.png,.docx" required class="form-file">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="photo" class="form-label">Passport Photo *</label>
+                                <input type="file" id="photo" name="photo" accept=".jpg,.jpeg,.png" required class="form-file">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="additional_documents" class="form-label">Additional Documents (Optional)</label>
+                                <input type="file" id="additional_documents" name="additional_documents" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx" class="form-file">
+                            </div>
+                        </div>
+                        
+                        <!-- Declaration -->
+                        <div class="declaration">
+                            <div>
+                                <input type="checkbox" id="declaration" name="declaration" required class="declaration-checkbox">
+                                <label for="declaration">
+                                    I hereby declare that all the information provided in this application is true and correct to the best of my knowledge. 
+                                    I understand that providing false information may lead to cancellation of my admission.
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <!-- Submit Button -->
+                        <div class="text-center">
+                            <button type="submit" class="submit-button">
+                                Submit Application
+                            </button>
+                        </div>
+                    </form>
+                    
+                    <!-- Success Message (Hidden by default) -->
+                    <div id="successMessage" class="success-message hidden">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Your application has been submitted successfully! You will receive a confirmation email shortly.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Show/hide sponsor fields based on sponsorship type
+        document.getElementById('sponsorship_type').addEventListener('change', function() {
+            const sponsorType = this.value;
+            const sponsorNameContainer = document.getElementById('sponsor_name_container');
+            const scholarshipDetailsContainer = document.getElementById('scholarship_details_container');
+            
+            if (sponsorType === 'Parent/Guardian' || sponsorType === 'Employer-sponsored' || sponsorType === 'Other') {
+                sponsorNameContainer.classList.remove('hidden');
+                document.getElementById('sponsor_name').setAttribute('required', 'required');
+            } else {
+                sponsorNameContainer.classList.add('hidden');
+                document.getElementById('sponsor_name').removeAttribute('required');
+            }
+            
+            if (sponsorType === 'Scholarship') {
+                scholarshipDetailsContainer.classList.remove('hidden');
+                document.getElementById('scholarship_details').setAttribute('required', 'required');
+            } else {
+                scholarshipDetailsContainer.classList.add('hidden');
+                document.getElementById('scholarship_details').removeAttribute('required');
+            }
+        });
+
+        // Form submission handling
+        document.getElementById('admissionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Basic validation
+            const form = this;
+            const formData = new FormData(form);
+            
+            // You can add more validation here if needed
+            
+            // Submit form via AJAX
+            fetch(form.action, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Show success message
+                    document.getElementById('successMessage').classList.remove('hidden');
+                    form.reset();
+                    // Scroll to success message
+                    document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    alert('Error: ' + data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred while submitting the form. Please try again.');
+            });
+        });
+    </script>
+</body>
+</html>

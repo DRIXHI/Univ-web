@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission Form - Starford International University</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="font-sans bg-gray-100">
+    <!-- Header/Navigation -->
+    <header class="bg-blue-900 text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="index.html">
+                    <img src="starford logo.jpg" alt="Starford International University Logo" class="h-10 w-10 mr-2 rounded-full shadow" />
+                </a>
+                <a href="index.html">
+                    <h1 class="text-2xl font-bold">STARFORD INTERNATIONAL UNIVERSITY</h1>
+                </a>
+            </div>
+        </div>
+    </header>
+<!-- Admission Section -->
+    <section id="admission" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-blue-900">Admission Process</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6 text-blue-900">How to Apply</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-red-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4">1</div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-1 text-blue-900">Applications Fee</h4>
+                                <p class="text-gray-700">Make payment to cooperative bank of south sudan at any branch</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-red-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4">2</div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-1 text-blue-900">Submit Documents</h4>
+                                <p class="text-gray-700">Submit your academic transcripts, recommendation letters, and any required test scores.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-red-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4">3</div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-1 text-blue-900">Application Review</h4>
+                                <p class="text-gray-700">Our admissions committee will review your application within 2-3 weeks.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-red-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4">4</div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-1 text-blue-900">Admission Decision</h4>
+                                <p class="text-gray-700">You'll receive an email notification with your admission status.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+<h3 class="text-2xl font-semibold mb-6 text-blue-900 text-center">Request Information</h3>
+  <p class="text-gray-700 text-center mb-6">
+Fill out the form below to receive more information about our programs.
+  </p><br>
+    <form id="admissionForm" method="POST" action="backend/process_admission.php" enctype="multipart/form-data" class="p-6">
+                    <!-- Personal Information -->
+                    <h3 class="text-xl font-semibold mb-4 text-blue-900 border-b pb-2">Personal Information</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                        <div>
+                            <label for="full_name" class="block text-gray-700 font-medium mb-2">Full Name *</label>
+                            <input type="text" id="full_name" name="full_name" required
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        
+                        <div>
+                            <label for="date_of_birth" class="block text-gray-700 font-medium mb-2">Date of Birth *</label>
+                            <input type="date" id="date_of_birth" name="date_of_birth" required
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        
+                        <div>
+                            <label for="gender" class="block text-gray-700 font-medium mb-2">Gender *</label>
+                            <select id="gender" name="gender" required
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option value="">Select Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="nationality" class="block text-gray-700 font-medium mb-2">Nationality *</label>
+                            <input type="text" id="nationality" name="nationality" required
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        
+                        <div>
+                            <label for="id_number" class="block text-gray-700 font-medium mb-2">National ID/Passport Number *</label>
+                            <input type="text" id="id_number" name="id_number" required
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                    </div>
+                    
+                    <!-- Contact Information -->
+                    <h3 class="text-xl font-semibold mb-4 text-blue-900 border-b pb-2">Contact Information</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                        <div>
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email Address *</label>
+                            <input type="email" id="email" name="email" required
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        
+                        <div>
+                            <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        
+                        <div class="md:col-span-2">
+                            <label for="address" class="block text-gray-700 font-medium mb-2">Address *</label>
+                            <textarea id="address" name="address" rows="3" required
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                        </div>
+                    </div>
+                    
+                    <!-- Academic Information -->
+                    <h3 class="text-xl font-semibold mb-4 text-blue-900 border-b pb-2">Academic Information</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                        <div>
+                            <label for="program" class="block text-gray-700 font-medium mb-2">Program of Interest *</label>
+                            <select id="program" name="program" required
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option value="">Select Program</option>
+                                <!-- Management Science -->
+                                <option value="BBA - Business Administration">BBA - Business Administration</option>
+                                <option value="BSc. Accounting & Finance">BSc. Accounting & Finance</option>
+                                <option value="BSc. Human Resource Management">BSc. Human Resource Management</option>
+                                <option value="BSc. Marketing & Digital Strategy">BSc. Marketing & Digital Strategy</option>
+                                <option value="BSc. Procurement & Logistics">BSc. Procurement & Logistics</option>
+                                <!-- Computer Science & IT -->
+                                <option value="BSc. Computer Science">BSc. Computer Science</option>
+                                <option value="BSc. Cybersecurity">BSc. Cybersecurity</option>
+                                <option value="BSc. Data Science & Artificial Intelligence">BSc. Data Science & Artificial Intelligence</option>
+                                <option value="BSc. Software Engineering">BSc. Software Engineering</option>
+                                <option value="BSc. Information Technology">BSc. Information Technology</option>
+                                <!-- Law -->
+                                <option value="LLB - Bachelor of Laws">LLB - Bachelor of Laws</option>
+                                <option value="BA. Human Rights Law">BA. Human Rights Law</option>
+                                <option value="LLB - International Law">LLB - International Law</option>
+                                <option value="LLB - Commercial Law">LLB - Commercial Law</option>
+                                <!-- Economics & Social Sciences -->
+                                <option value="BA. Economics">BA. Economics</option>
+                                <option value="BA. International Relations & Diplomacies">BA. International Relations & Diplomacies</option>
+                                <option value="BA. Development Studies">BA. Development Studies</option>
+                                <option value="BA. Public Administration">BA. Public Administration</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="previous_education" class="block text-gray-700 font-medium mb-2">Previous Education *</label>
+                            <input type="text" id="previous_education" name="previous_education" required
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" 
+                                placeholder="e.g., High School Diploma, Bachelor's Degree">
+                        </div>
+                        
+                        <div>
+                            <label for="graduation_year" class="block text-gray-700 font-medium mb-2">Year of Graduation *</label>
+                            <input type="number" id="graduation_year" name="graduation_year" min="1950" max="2025" required
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        
+                        <div>
+                            <label for="gpa" class="block text-gray-700 font-medium mb-2">GPA/Score *</label>
+                            <input type="number" id="gpa" name="gpa" step="0.01" min="0" max="4.0" required
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                    </div>
+                    
+                    <!-- Sponsorship Information -->
+                    <h3 class="text-xl font-semibold mb-4 text-blue-900 border-b pb-2">Sponsorship Information</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                        <div>
+                            <label for="sponsorship_type" class="block text-gray-700 font-medium mb-2">Type of Sponsorship *</label>
+                            <select id="sponsorship_type" name="sponsorship_type" required
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option value="">Select Sponsorship Type</option>
+                                <option value="Self-sponsored">Self-sponsored</option>
+                                <option value="Parent/Guardian">Parent/Guardian</option>
+                                <option value="Scholarship">Scholarship</option>
+                                <option value="Employer-sponsored">Employer-sponsored</option>
+                                <option value="Government-sponsored">Government-sponsored</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div id="sponsor_name_container" class="hidden">
+                            <label for="sponsor_name" class="block text-gray-700 font-medium mb-2">Sponsor Name</label>
+                            <input type="text" id="sponsor_name" name="sponsor_name"
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        
+                        <div id="scholarship_details_container" class="hidden md:col-span-2">
+                            <label for="scholarship_details" class="block text-gray-700 font-medium mb-2">Scholarship Details</label>
+                            <textarea id="scholarship_details" name="scholarship_details" rows="2"
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                        </div>
+                    </div>
+                    
+                    <!-- Documents Upload -->
+                    <h3 class="text-xl font-semibold mb-4 text-blue-900 border-b pb-2">Required Documents</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                        <div>
+                            <label for="id_document" class="block text-gray-700 font-medium mb-2">ID/Passport Copy *</label>
+                            <input type="file" id="id_document" name="id_document" accept=".pdf,.jpg,.jpeg,.png" required
+                                class="w-full border p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        
+                        <div>
+                            <label for="academic_documents" class="block text-gray-700 font-medium mb-2">Academic Certificates/Transcripts *</label>
+                            <input type="file" id="academic_documents" name="academic_documents" accept=".pdf,.jpg,.jpeg,.png,.docx" required
+                                class="w-full border p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        
+                        <div>
+                            <label for="photo" class="block text-gray-700 font-medium mb-2">Passport Photo *</label>
+                            <input type="file" id="photo" name="photo" accept=".jpg,.jpeg,.png" required
+                                class="w-full border p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        
+                        <div>
+                            <label for="additional_documents" class="block text-gray-700 font-medium mb-2">Additional Documents (Optional)</label>
+                            <input type="file" id="additional_documents" name="additional_documents" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx"
+                                class="w-full border p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                    </div>
+                    
+                    <!-- Declaration -->
+                    <div class="mb-6 p-4 bg-blue-50 rounded-lg">
+                        <div class="flex items-start">
+                            <input type="checkbox" id="declaration" name="declaration" required
+                                class="mt-1 mr-2">
+                            <label for="declaration" class="text-gray-700">
+                                I hereby declare that all the information provided in this application is true and correct to the best of my knowledge. 
+                                I understand that providing false information may lead to cancellation of my admission.
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Submit Button -->
+                    <div class="text-center">
+                        <button type="submit" class="bg-blue-900 hover:bg-blue-800 text-white font-bold py-3 px-8 rounded-lg transition duration-300">
+                            Submit Application
+                        </button>
+                    </div>
+                </form>
+                
+                <!-- Success Message (Hidden by default) -->
+                <div id="successMessage" class="hidden p-6 bg-green-100 text-green-800 rounded-lg mb-6">
+                    <i class="fas fa-check-circle mr-2"></i>
+                    <span>Your application has been submitted successfully! You will receive a confirmation email shortly.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Show/hide sponsor fields based on sponsorship type
+        document.getElementById('sponsorship_type').addEventListener('change', function() {
+            const sponsorType = this.value;
+            const sponsorNameContainer = document.getElementById('sponsor_name_container');
+            const scholarshipDetailsContainer = document.getElementById('scholarship_details_container');
+            
+            if (sponsorType === 'Parent/Guardian' || sponsorType === 'Employer-sponsored' || sponsorType === 'Other') {
+                sponsorNameContainer.classList.remove('hidden');
+                document.getElementById('sponsor_name').setAttribute('required', 'required');
+            } else {
+                sponsorNameContainer.classList.add('hidden');
+                document.getElementById('sponsor_name').removeAttribute('required');
+            }
+            
+            if (sponsorType === 'Scholarship') {
+                scholarshipDetailsContainer.classList.remove('hidden');
+                document.getElementById('scholarship_details').setAttribute('required', 'required');
+            } else {
+                scholarshipDetailsContainer.classList.add('hidden');
+                document.getElementById('scholarship_details').removeAttribute('required');
+            }
+        });
+
+        // Form submission handling
+        document.getElementById('admissionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Basic validation
+            const form = this;
+            const formData = new FormData(form);
+            
+            // You can add more validation here if needed
+            
+            // Submit form via AJAX
+            fetch(form.action, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Show success message
+                    document.getElementById('successMessage').classList.remove('hidden');
+                    form.reset();
+                    // Scroll to success message
+                    document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    alert('Error: ' + data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred while submitting the form. Please try again.');
+            });
+        });
+    </script>
+</body>
+</html>
